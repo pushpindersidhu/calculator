@@ -1,6 +1,10 @@
 #include <iostream>
+#include "menu/Menu.h"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Menu::Menu menu(Menu::Type::SCIENTIFIC);
+    menu.mainloop();
     return 0;
 }
