@@ -41,6 +41,24 @@ const Option options[] = {
 namespace Menu {
     Menu::Menu(Type type) : _type(type) {}
 
+    Menu::Menu() {
+        this->_type = Type::BASIC;
+        cout << Green"Welcome to the calculator!" << endl << endl;
+
+        cout << Reset"What mode would you like to use?" << endl;
+        cout << "Note: You can switch modes at any time by entering 0." << endl;
+        cout << "1. Basic" << endl;
+        cout << "2. Scientific" << endl;
+        cout << Cyan"Enter your choice: ";
+        int option;
+        cin >> option;
+
+        while (option != 1 and option != 2) {
+            cout << Red"Invalid option!" << Cyan" Try Again: ";
+            cin >> option;
+        }
+    }
+
     void Menu::mainloop() {
         string result;
 

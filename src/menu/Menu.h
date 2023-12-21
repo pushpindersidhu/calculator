@@ -25,6 +25,7 @@ namespace Menu {
         static int getOption();
     public:
         explicit Menu(Type type);
+        explicit Menu();
 
         [[nodiscard]] Type getType() const;
         void setType(Type type);

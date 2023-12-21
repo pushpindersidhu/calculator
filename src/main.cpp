@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    Menu::Menu menu(Menu::Type::SCIENTIFIC);
+    Menu::Menu menu;
     menu.mainloop();
     return 0;
 }
