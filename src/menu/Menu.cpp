@@ -323,7 +323,7 @@ namespace Menu {
         cout << Cyan << setfill('-') << setw(80) << "-" << Reset << endl;
     }
 
-    void Menu::displayMenuHeader() {
+    void Menu::displayMenuHeader() const {
         cout << Cyan << setfill('-') << setw(80) << "-" << Reset << endl;
         cout << Cyan << setfill(' ') << setw(31) << left << "|" << Reset;
         cout << Green << "Calculator - Sidhu" << Reset;

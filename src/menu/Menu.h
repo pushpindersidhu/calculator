@@ -18,7 +18,7 @@ namespace Menu {
         std::string results;
 
         void displayMenu();
-        void displayMenuHeader();
+        void displayMenuHeader() const;
 
         static void clearScreen();
         static void prompt();
