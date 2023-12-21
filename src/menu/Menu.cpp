@@ -65,13 +65,13 @@ namespace Menu {
                     return;
                 }
                 case 0: {
-                    if (_type == Type::BASIC) {
+                    if (getType() == Type::BASIC) {
                         setType(Type::SCIENTIFIC);
                     } else {
                         setType(Type::BASIC);
                     }
 
-                    string mode = _type == Type::BASIC ? "Basic" : "Scientific";
+                    string mode = getType() == Type::BASIC ? "Basic" : "Scientific";
                     result = "Switched to " + mode + " mode.";
                     break;
                 }
@@ -304,7 +304,7 @@ namespace Menu {
 
         int lastId = 0;
         for (const auto &option: options) {
-            if (option.type == _type || option.type == Type::BASIC) {
+            if (option.type == getType() || option.type == Type::BASIC) {
                 if (option.id % 3 == 1 or option.id == 0) {
                     cout << setw(1) << left << Cyan << "|" << Reset;
                 }
@@ -332,7 +332,7 @@ namespace Menu {
         cout << Cyan << setw(3) << left << "|" << Reset;
         cout << setw(41) << left << Red"-1. Exit";
 
-        const string mode = _type == Type::BASIC ? "Scientific" : "Basic";
+        const string mode = getType() == Type::BASIC ? "Scientific" : "Basic";
         cout << setw(40) << right << Yellow"0. " + mode + " mode";
 
         cout << setw(10) << right << Cyan << "|" << Reset;
