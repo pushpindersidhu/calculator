@@ -77,6 +77,11 @@ namespace Menu {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+            if (getType() == Type::BASIC and option > 4) {
+                result = Red"Invalid option: " + to_string(option);
+                continue;
+            }
+
             switch (option) {
                 case -1: {
                     cout << Red"\nExiting..." << endl;
