@@ -118,7 +118,6 @@ namespace Menu {
                     int a, b;
                     cout << "Enter two numbers: ";
                     cin >> a >> b;
-                    cout << "Multiply: " << a << " * " << b << " = " << Math::multiply(a, b) << endl;
                     result = "Multiply: " + to_string(a) + " * " + to_string(b) + " = " +
                              to_string(Math::multiply(a, b));
                     break;
@@ -127,7 +126,6 @@ namespace Menu {
                     int a, b;
                     cout << "Enter two numbers: ";
                     cin >> a >> b;
-                    cout << "Divide: " << a << " / " << b << " = " << Math::divide(a, b) << endl;
                     result = "Divide: " + to_string(a) + " / " + to_string(b) + " = " + to_string(Math::divide(a, b));
                     break;
                 }
@@ -135,7 +133,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Sine: " << a << " = " << Math::sine(a) << endl;
                     result = "Sine: " + to_string(a) + " = " + to_string(Math::sine(a));
                     break;
                 }
@@ -143,7 +140,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Cosine: " << a << " = " << Math::cosine(a) << endl;
                     result = "Cosine: " + to_string(a) + " = " + to_string(Math::cosine(a));
                     break;
                 }
@@ -151,7 +147,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Tangent: " << a << " = " << Math::tangent(a) << endl;
                     result = "Tangent: " + to_string(a) + " = " + to_string(Math::tangent(a));
                     break;
                 }
@@ -159,7 +154,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Cotangent: " << a << " = " << Math::cotangent(a) << endl;
                     result = "Cotangent: " + to_string(a) + " = " + to_string(Math::cotangent(a));
                     break;
                 }
@@ -167,7 +161,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Secant: " << a << " = " << Math::secant(a) << endl;
                     result = "Secant: " + to_string(a) + " = " + to_string(Math::secant(a));
                     break;
                 }
@@ -175,7 +168,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Cosecant: " << a << " = " << Math::cosecant(a) << endl;
                     result = "Cosecant: " + to_string(a) + " = " + to_string(Math::cosecant(a));
                     break;
                 }
@@ -183,7 +175,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number:";
                     cin >> a;
-                    cout << "Natural Log: " << a << " = " << Math::naturalLog(a) << endl;
                     result = "Natural Log: " + to_string(a) + " = " + to_string(Math::naturalLog(a));
                     break;
                 }
@@ -191,7 +182,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Log Base 10: " << a << " = " << Math::logBase10(a) << endl;
                     result = "Log Base 10: " + to_string(a) + " = " + to_string(Math::logBase10(a));
                     break;
                 }
@@ -201,7 +191,6 @@ namespace Menu {
                     cin >> a;
                     cout << "Enter the base: ";
                     cin >> n;
-                    cout << "Log Base N: " << a << " log " << n << " = " << Math::logBaseN(a, n) << endl;
                     result = "Log Base N: " + to_string(a) + " log " + to_string(n) + " = " +
                              to_string(Math::logBaseN(a, n));
                     break;
@@ -210,7 +199,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Exponent: " << "e^" << a << " = " << Math::exponent(a) << endl;
                     result = "Exponent: " + to_string(a) + " = " + to_string(Math::exponent(a));
                     break;
                 }
@@ -220,7 +208,6 @@ namespace Menu {
                     cin >> a;
                     cout << "Enter the base: ";
                     cin >> n;
-                    cout << "Exponent Base N: " << n << "^" << a << " = " << Math::exponentBaseN(a, n) << endl;
                     result = "Exponent Base N: " + to_string(a) + " = " + to_string(Math::exponentBaseN(a, n));
                     break;
                 }
@@ -228,7 +215,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Square Root: " << "√" << a << " = " << Math::squareRoot(a) << endl;
                     result = "Square Root: " + to_string(a) + " = " + to_string(Math::squareRoot(a));
                     break;
                 }
@@ -236,7 +222,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Cube Root: " << "∛" << a << " = " << Math::cubeRoot(a) << endl;
                     result = "Cube Root: " + to_string(a) + " = " + to_string(Math::cubeRoot(a));
                     break;
                 }
@@ -246,7 +231,6 @@ namespace Menu {
                     cin >> a;
                     cout << "Enter the base: ";
                     cin >> n;
-                    cout << "Nth Root: " << n << "√" << a << " = " << Math::nthRoot(a, n) << endl;
                     result = "Nth Root: " + to_string(a) + " = " + to_string(Math::nthRoot(a, n));
                     break;
                 }
@@ -254,7 +238,6 @@ namespace Menu {
                     int a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Factorial: " << a << "! = " << Math::factorial(a) << endl;
                     result = "Factorial: " + to_string(a) + " = " + to_string(Math::factorial(a));
                     break;
                 }
@@ -262,7 +245,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Absolute Value: " << "|" << a << "| = " << Math::absoluteValue(a) << endl;
                     result = "Absolute Value: " + to_string(a) + " = " + to_string(Math::absoluteValue(a));
                     break;
                 }
@@ -272,7 +254,6 @@ namespace Menu {
                     cin >> a;
                     cout << "Enter the power: ";
                     cin >> b;
-                    cout << "Power: " << a << "^" << b << " = " << Math::power(a, b) << endl;
                     result = "Power: " + to_string(a) + " = " + to_string(Math::power(a, b));
                     break;
                 }
@@ -280,7 +261,6 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Inverse: " << "1/" << a << " = " << Math::inverse(a) << endl;
                     result = "Inverse: " + to_string(a) + " = " + to_string(Math::inverse(a));
                     break;
                 }
@@ -290,7 +270,6 @@ namespace Menu {
                     cin >> a;
                     cout << "Enter the percent: ";
                     cin >> b;
-                    cout << "Percent: " << a << "%" << b << " = " << Math::percent(a, b) << endl;
                     result = "Percent: " + to_string(a) + " = " + to_string(Math::percent(a, b));
                     break;
                 }
@@ -298,12 +277,10 @@ namespace Menu {
                     double a;
                     cout << "Enter a number: ";
                     cin >> a;
-                    cout << "Radians: " << a << " = " << Math::radians(a) << endl;
                     result = "Radians: " + to_string(a) + " = " + to_string(Math::radians(a));
                     break;
                 }
                 default: {
-                    // red
                     result = "\033[1;31mInvalid option: " + to_string(option) + "\033[0m";
                     break;
                 }
