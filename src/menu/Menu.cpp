@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <limits>
 #include "Menu.h"
 #include "Option.h"
 #include "../utils/colors.h"
