@@ -54,7 +54,9 @@ namespace Menu {
         int option;
         cin >> option;
 
-        while (option != 1 and option != 2) {
+        while (cin.fail() or option != 1 and option != 2) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << Red"Invalid option!" << Cyan" Try Again: ";
             cin >> option;
         }
