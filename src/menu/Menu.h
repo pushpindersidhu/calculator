@@ -5,6 +5,8 @@
 #ifndef CALCULATOR_MENU_H
 #define CALCULATOR_MENU_H
 
+#include <string>
+
 namespace Menu {
 
     enum class Type {

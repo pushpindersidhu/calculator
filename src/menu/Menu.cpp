@@ -7,6 +7,7 @@
 #include <limits>
 #include "Menu.h"
 #include "Option.h"
+#include "../evaluator/Evaluator.h"
 #include "../utils/colors.h"
 #include "../math/smath.h"
 
@@ -17,26 +18,27 @@ const Option options[] = {
         Option(2, "Subtract", "Subtract two numbers", Menu::Type::BASIC),
         Option(3, "Multiply", "Multiply two numbers", Menu::Type::BASIC),
         Option(4, "Divide", "Divide two numbers", Menu::Type::BASIC),
-        Option(5, "Sine", "Find the sine of a number", Menu::Type::SCIENTIFIC),
-        Option(6, "Cosine", "Find the cosine of a number", Menu::Type::SCIENTIFIC),
-        Option(7, "Tangent", "Find the tangent of a number", Menu::Type::SCIENTIFIC),
-        Option(8, "Cotangent", "Find the cotangent of a number", Menu::Type::SCIENTIFIC),
-        Option(9, "Secant", "Find the secant of a number", Menu::Type::SCIENTIFIC),
-        Option(10, "Cosecant", "Find the cosecant of a number", Menu::Type::SCIENTIFIC),
-        Option(11, "Natural Log", "Find the natural log of a number", Menu::Type::SCIENTIFIC),
-        Option(12, "Log Base 10", "Find the log base 10 of a number", Menu::Type::SCIENTIFIC),
-        Option(13, "Log Base N", "Find the log base N of a number", Menu::Type::SCIENTIFIC),
-        Option(14, "Exponent", "Find the exponent of a number", Menu::Type::SCIENTIFIC),
-        Option(15, "Exponent Base N", "Find the exponent base N of a number", Menu::Type::SCIENTIFIC),
-        Option(16, "Square Root", "Find the square root of a number", Menu::Type::SCIENTIFIC),
-        Option(17, "Cube Root", "Find the cube root of a number", Menu::Type::SCIENTIFIC),
-        Option(18, "Nth Root", "Find the nth root of a number", Menu::Type::SCIENTIFIC),
-        Option(19, "Factorial", "Find the factorial of a number", Menu::Type::SCIENTIFIC),
-        Option(20, "Absolute Value", "Find the absolute value of a number", Menu::Type::SCIENTIFIC),
-        Option(21, "Power", "Find the power of a number", Menu::Type::SCIENTIFIC),
-        Option(22, "Inverse", "Find the inverse of a number", Menu::Type::SCIENTIFIC),
-        Option(23, "Percent", "Find the percent of a number", Menu::Type::SCIENTIFIC),
-        Option(24, "Radians", "Find the radians of a number", Menu::Type::SCIENTIFIC),
+        Option(5, "Sine", "Sine of a number", Menu::Type::SCIENTIFIC),
+        Option(6, "Cosine", "Cosine of a number", Menu::Type::SCIENTIFIC),
+        Option(7, "Tangent", "Tangent of a number", Menu::Type::SCIENTIFIC),
+        Option(8, "Cotangent", "Cotangent of a number", Menu::Type::SCIENTIFIC),
+        Option(9, "Secant", "Secant of a number", Menu::Type::SCIENTIFIC),
+        Option(10, "Cosecant", "Cosecant of a number", Menu::Type::SCIENTIFIC),
+        Option(11, "Natural Log", "Natural Log of a number", Menu::Type::SCIENTIFIC),
+        Option(12, "Log Base 10", "Log Base 10 of a number", Menu::Type::SCIENTIFIC),
+        Option(13, "Log Base N", "Log Base N of a number", Menu::Type::SCIENTIFIC),
+        Option(14, "Exponent", "Exponent of a number", Menu::Type::SCIENTIFIC),
+        Option(15, "Exponent Base N", "Exponent Base N of a number", Menu::Type::SCIENTIFIC),
+        Option(16, "Square Root", "Square Root of a number", Menu::Type::SCIENTIFIC),
+        Option(17, "Cube Root", "Cube Root of a number", Menu::Type::SCIENTIFIC),
+        Option(18, "Nth Root", "Nth Root of a number", Menu::Type::SCIENTIFIC),
+        Option(19, "Factorial", "Factorial of a number", Menu::Type::SCIENTIFIC),
+        Option(20, "Absolute Value", "Absolute Value of a number", Menu::Type::SCIENTIFIC),
+        Option(21, "Power", "Power of a number", Menu::Type::SCIENTIFIC),
+        Option(22, "Inverse", "Inverse of a number", Menu::Type::SCIENTIFIC),
+        Option(23, "Percent", "Percent of a number", Menu::Type::SCIENTIFIC),
+        Option(24, "Radians", "Radians of a number", Menu::Type::SCIENTIFIC),
+        Option(25, "Evaluate", "Evaluate an expression", Menu::Type::SCIENTIFIC)
 };
 
 namespace Menu {
@@ -60,6 +62,8 @@ namespace Menu {
             cout << Red"Invalid option!" << Cyan" Try Again: ";
             cin >> option;
         }
+
+        setType(option == 1 ? Type::BASIC : Type::SCIENTIFIC);
     }
 
     void Menu::mainloop() {
@@ -75,6 +79,9 @@ namespace Menu {
             }
             prompt();
 
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
             int option = getOption();
 
             cin.clear();
@@ -88,7 +95,7 @@ namespace Menu {
             switch (option) {
                 case -1: {
                     cout << Red"\nExiting..." << endl;
-                    return;
+                    exit(0);
                 }
                 case 0: {
                     if (getType() == Type::BASIC) {
@@ -280,6 +287,17 @@ namespace Menu {
                     cout << "Enter a number: ";
                     cin >> a;
                     result = "Radians: " + to_string(a) + " = " + to_string(Math::radians(a));
+                    break;
+                }
+                case 25: {
+                    string expression;
+                    cout << "Enter an expression: ";
+                    cin >> expression;
+                    try {
+                        result = "Evaluate: " + expression + " = " + to_string(Evaluator::eval(expression));
+                    } catch (const exception &e) {
+                        result = Red + string(e.what());
+                    }
                     break;
                 }
                 default: {
